@@ -1098,8 +1098,8 @@ const ProductCard = ({ product, discount, onAddToCart }) => {
     <div className="product-card">
       <h3>Product: {product.name}</h3>
       <div className="price">
-        {discount && <span className="original-price">${product.price}</span>}
-        <span className="final-price">${finalPrice.toFixed(2)}</span>
+        {discount && <span className="original-price">\${product.price}</span>}
+        <span className="final-price">\${finalPrice.toFixed(2)}</span>
         {discount && <span className="discount">-{discount}%</span>}
       </div>
       <p>{product.description}</p>

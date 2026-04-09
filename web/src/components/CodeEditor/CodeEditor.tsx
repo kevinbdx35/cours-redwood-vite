@@ -211,7 +211,6 @@ const CodeEditor = ({
             <Button
               appearance="primary"
               onClick={runCode}
-              isLoading={isRunning}
               isDisabled={isRunning}
             >
               {isRunning ? 'Exécution...' : 'Exécuter'}

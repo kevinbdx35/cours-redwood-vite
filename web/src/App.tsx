@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ComponentType, ReactNode } from 'react'
 
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
@@ -12,8 +12,12 @@ interface AppProps {
   children?: ReactNode
 }
 
+// Cast nécessaire : incompatibilité de types entre FatalErrorPage (généré par RedwoodJS)
+// et la signature attendue par FatalErrorBoundary dans cette version du framework.
+const FatalErrorPageCast = FatalErrorPage as ComponentType<{ error?: Error }>
+
 const App = ({ children }: AppProps) => (
-  <FatalErrorBoundary page={FatalErrorPage}>
+  <FatalErrorBoundary page={FatalErrorPageCast}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <RedwoodApolloProvider>
         <ProgressProvider>{children}</ProgressProvider>
