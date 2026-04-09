@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web"
+    ]
+  },
+  "devDependencies": {
+    "@redwoodjs/core": "8.8.0",
+    "@redwoodjs/project-config": "8.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier-plugin-tailwindcss": "^0.5.12"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": "=20.x"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@4.6.0",
+  "resolutions": {
+    "@storybook/react-dom-shim@npm:7.6.20": "https://verdaccio.tobbe.dev/@storybook/react-dom-shim/-/react-dom-shim-8.0.8.tgz"
+  },
+  "dependencies": {
+    "@atlaskit/banner": "^14.0.7",
+    "@atlaskit/breadcrumbs": "^15.2.1",
+    "@atlaskit/button": "^23.2.8",
+    "@atlaskit/form": "^12.0.14",
+    "@atlaskit/icon": "^27.7.0",
+    "@atlaskit/progress-indicator": "^12.0.5",
+    "@atlaskit/section-message": "^8.4.0",
+    "@atlaskit/select": "^21.2.1",
+    "@atlaskit/spinner": "^18.0.6",
+    "@atlaskit/tabs": "^18.1.4",
+    "@atlaskit/textfield": "^8.0.8",
+    "@atlaskit/theme": "^19.0.1",
+    "@atlaskit/toggle": "^15.0.13",
+    "@atlaskit/tree": "^9.0.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn rw lint --fix"
+    ],
+    "*.{json,md,css,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
