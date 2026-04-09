@@ -1,7 +1,7 @@
 # Cours Interactif RedwoodJS & Vite
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W61I0YBJ)
-[![CI](https://github.com/your-username/cours-redwood-vite/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/cours-redwood-vite/actions/workflows/ci.yml)
+[![CI](https://github.com/kevinbdx35/cours-redwood-vite/actions/workflows/ci.yml/badge.svg)](https://github.com/kevinbdx35/cours-redwood-vite/actions/workflows/ci.yml)
 
 Plateforme d'apprentissage interactive pour maîtriser RedwoodJS avec Vite. Chaque leçon combine théorie, éditeur de code en direct et quiz pour une progression concrète du niveau débutant au niveau avancé.
 
@@ -35,7 +35,7 @@ Plateforme d'apprentissage interactive pour maîtriser RedwoodJS avec Vite. Chaq
 
 ```bash
 # Cloner
-git clone https://github.com/your-username/cours-redwood-vite.git
+git clone https://github.com/kevinbdx35/cours-redwood-vite.git
 cd cours-redwood-vite
 
 # Installer les dépendances
