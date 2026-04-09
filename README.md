@@ -2,6 +2,8 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W61I0YBJ)
 [![CI](https://github.com/kevinbdx35/cours-redwood-vite/actions/workflows/ci.yml/badge.svg)](https://github.com/kevinbdx35/cours-redwood-vite/actions/workflows/ci.yml)
+![Tests](https://img.shields.io/badge/tests-32%20pass-brightgreen)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)
 
 Plateforme d'apprentissage interactive pour maîtriser RedwoodJS avec Vite. Chaque leçon combine théorie, éditeur de code en direct et quiz pour une progression concrète du niveau débutant au niveau avancé.
 
@@ -128,13 +130,16 @@ yarn rw test
 yarn rw test --watch
 ```
 
-Les tests couvrent :
+**32 tests passent** répartis sur 6 suites :
 
-- `ProgressContext` — logique de complétion, persistance localStorage
-- `CodeEditor` — validation d'input, limite de caractères, exécution
-- `QuizComponent` — navigation, calcul du score, réinitialisation
-- `SimpleLessonCard` — états (normal/terminé/verrouillé), accessibilité
-- Directives GraphQL — `requireAuth`, `skipAuth`
+| Suite              | Tests                                                         |
+| ------------------ | ------------------------------------------------------------- |
+| `ProgressContext`  | logique de complétion, persistance localStorage, restauration |
+| `CodeEditor`       | validation d'input, limite 5000 chars, exécution, reset       |
+| `QuizComponent`    | navigation, calcul du score, réinitialisation                 |
+| `SimpleLessonCard` | états normal / terminé / verrouillé, accessibilité            |
+| `requireAuth`      | directive GraphQL d'authentification                          |
+| `skipAuth`         | directive GraphQL publique                                    |
 
 ## Commandes utiles
 
@@ -151,11 +156,13 @@ yarn rw --help       # Toutes les commandes disponibles
 
 À chaque push sur `main` et pull request, GitHub Actions exécute :
 
-1. **Lint & Typecheck** — ESLint + `tsc --noEmit` (web et api)
+1. **Lint & Typecheck** — ESLint + `tsc --noEmit` en mode strict (web et api)
 2. **Tests** — Jest sur toute la codebase
 3. **Build** — vérification que la compilation de production passe
 
 Le hook `pre-commit` (Husky + lint-staged) formate automatiquement les fichiers avant chaque commit.
+
+TypeScript est configuré en **mode strict** (`"strict": true`) sur le frontend et le backend. Les erreurs de typage dans les dépendances tierces (RedwoodJS, Apollo) sont des incompatibilités de versions connues et non bloquantes.
 
 ## Déploiement
 
